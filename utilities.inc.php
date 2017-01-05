@@ -1150,7 +1150,26 @@ function pagestart_nobody($titletext, $addcss='') {
 	@header( 'Pragma: no-cache' );
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" <?php
+$currentlang = getSetting('currentlanguage');
+$langname = getLanguage($currentlang);
+if($langname == 'Chinese (Simplified)')
+    {
+		echo 'lang="zh"';
+    }
+else if($langname == 'Chinese (Traditional)')
+    {
+		echo 'lang="zh"';
+    }
+else if($langname == 'Chinese')
+    {
+		echo 'lang="zh"';
+    }
+else if($langname == 'Japanese')
+    {
+        echo 'lang="ja"';
+    }
+ ?>>
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	
